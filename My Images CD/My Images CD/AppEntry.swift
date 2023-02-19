@@ -15,6 +15,9 @@ struct AppEntry: App {
         WindowGroup {
             MyImagesGridView()
                 .environment(\.managedObjectContext, MyImagesContainer().persistentContainer.viewContext)
+                .onAppear {
+                    print(URL.documentsDirectory.path())
+                }
         }
     }
 }

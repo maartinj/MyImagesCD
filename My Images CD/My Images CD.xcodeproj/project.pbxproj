@@ -13,6 +13,7 @@
 		BBF0338B291046BD00D4E040 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF0338A291046BD00D4E040 /* Preview Assets.xcassets */; };
 		BBF03392291046E400D4E040 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF03391291046E400D4E040 /* Launch Screen.storyboard */; };
 		E42A1DAC299FED8E003FB659 /* FormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DAB299FED8E003FB659 /* FormType.swift */; };
+		E42A1DAE29A19807003FB659 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */; };
 		E4DB236F299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4DB236D299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld */; };
 		E4DB2371299F0EC1008E6296 /* MyImagesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2370299F0EC1008E6296 /* MyImagesContainer.swift */; };
 		E4DB2373299F0FDF008E6296 /* MyImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2372299F0FDF008E6296 /* MyImage+Extension.swift */; };
@@ -29,6 +30,7 @@
 		BBF0338A291046BD00D4E040 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBF03391291046E400D4E040 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E42A1DAB299FED8E003FB659 /* FormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormType.swift; sourceTree = "<group>"; };
+		E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		E4DB236E299F0E47008E6296 /* MyImagesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyImagesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E4DB2370299F0EC1008E6296 /* MyImagesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesContainer.swift; sourceTree = "<group>"; };
 		E4DB2372299F0FDF008E6296 /* MyImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyImage+Extension.swift"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				BBF03383291046BD00D4E040 /* AppEntry.swift */,
 				BBF03385291046BD00D4E040 /* MyImagesGridView.swift */,
 				E4DB2374299F127F008E6296 /* ImagePicker.swift */,
+				E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */,
 				E4DB2376299F16AF008E6296 /* Form */,
 				E4DB236C299F0E2F008E6296 /* CoreData */,
 				BBF03387291046BD00D4E040 /* Assets.xcassets */,
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4DB237A299F18D3008E6296 /* ImageFormView.swift in Sources */,
+				E42A1DAE29A19807003FB659 /* FileManager+Extension.swift in Sources */,
 				E4DB2373299F0FDF008E6296 /* MyImage+Extension.swift in Sources */,
 				BBF03386291046BD00D4E040 /* MyImagesGridView.swift in Sources */,
 				E4DB2371299F0EC1008E6296 /* MyImagesContainer.swift in Sources */,

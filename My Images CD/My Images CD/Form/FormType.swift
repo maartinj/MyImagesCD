@@ -5,11 +5,11 @@
 //  Created by Marcin Jędrzejak on 17/02/2023.
 //
 
-import Foundation
+import SwiftUI
 
-enum FormType: Identifiable {
-    case new
-    case update
+enum FormType: Identifiable, View {
+    case new(UIImage)
+    case update(MyImage)
     
     var id: String {
         switch self {
@@ -17,6 +17,15 @@ enum FormType: Identifiable {
             return "new"
         case .update:
             return "update"
+        }
+    }
+    
+    var body: some View {
+        switch self {
+        case .new(let uiImage):
+            return ImageFormView(viewModel: FormViewModel(uiImage))
+        case .update(let myImage):
+            return ImageFormView(viewModel: FormViewModel(myImage))
         }
     }
 }
