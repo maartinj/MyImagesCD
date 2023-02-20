@@ -11,12 +11,14 @@ import SwiftUI
 
 @main
 struct AppEntry: App {
+    @StateObject var shareService = ShareService()
     var body: some Scene {
         WindowGroup {
             MyImagesGridView()
                 .environment(\.managedObjectContext, MyImagesContainer().persistentContainer.viewContext)
+                .environmentObject(shareService)
                 .onAppear {
-                    print(URL.documentsDirectory.path())
+                    print("Document Directory", URL.documentsDirectory.path())
                 }
         }
     }

@@ -14,6 +14,8 @@
 		BBF03392291046E400D4E040 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF03391291046E400D4E040 /* Launch Screen.storyboard */; };
 		E42A1DAC299FED8E003FB659 /* FormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DAB299FED8E003FB659 /* FormType.swift */; };
 		E42A1DAE29A19807003FB659 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */; };
+		E42A1DB529A3874E003FB659 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DB429A3874E003FB659 /* ShareService.swift */; };
+		E42A1DB829A389B6003FB659 /* icon-doc.png in Resources */ = {isa = PBXBuildFile; fileRef = E42A1DB729A389B6003FB659 /* icon-doc.png */; };
 		E4DB236F299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4DB236D299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld */; };
 		E4DB2371299F0EC1008E6296 /* MyImagesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2370299F0EC1008E6296 /* MyImagesContainer.swift */; };
 		E4DB2373299F0FDF008E6296 /* MyImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2372299F0FDF008E6296 /* MyImage+Extension.swift */; };
@@ -31,6 +33,9 @@
 		BBF03391291046E400D4E040 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E42A1DAB299FED8E003FB659 /* FormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormType.swift; sourceTree = "<group>"; };
 		E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		E42A1DB429A3874E003FB659 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
+		E42A1DB629A38934003FB659 /* My-Images-CD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "My-Images-CD-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E42A1DB729A389B6003FB659 /* icon-doc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-doc.png"; sourceTree = "<group>"; };
 		E4DB236E299F0E47008E6296 /* MyImagesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyImagesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E4DB2370299F0EC1008E6296 /* MyImagesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesContainer.swift; sourceTree = "<group>"; };
 		E4DB2372299F0FDF008E6296 /* MyImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyImage+Extension.swift"; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		BBF03382291046BD00D4E040 /* My Images CD */ = {
 			isa = PBXGroup;
 			children = (
+				E42A1DB629A38934003FB659 /* My-Images-CD-Info.plist */,
 				BBF03383291046BD00D4E040 /* AppEntry.swift */,
 				BBF03385291046BD00D4E040 /* MyImagesGridView.swift */,
 				E4DB2374299F127F008E6296 /* ImagePicker.swift */,
@@ -76,6 +82,7 @@
 				E4DB2376299F16AF008E6296 /* Form */,
 				E4DB236C299F0E2F008E6296 /* CoreData */,
 				BBF03387291046BD00D4E040 /* Assets.xcassets */,
+				E42A1DB729A389B6003FB659 /* icon-doc.png */,
 				BBF03391291046E400D4E040 /* Launch Screen.storyboard */,
 				BBF03389291046BD00D4E040 /* Preview Content */,
 			);
@@ -106,6 +113,7 @@
 				E4DB2377299F16CB008E6296 /* FormViewModel.swift */,
 				E4DB2379299F18D3008E6296 /* ImageFormView.swift */,
 				E42A1DAB299FED8E003FB659 /* FormType.swift */,
+				E42A1DB429A3874E003FB659 /* ShareService.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 				BBF03392291046E400D4E040 /* Launch Screen.storyboard in Resources */,
 				BBF0338B291046BD00D4E040 /* Preview Assets.xcassets in Resources */,
 				BBF03388291046BD00D4E040 /* Assets.xcassets in Resources */,
+				E42A1DB829A389B6003FB659 /* icon-doc.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +192,7 @@
 			files = (
 				E4DB237A299F18D3008E6296 /* ImageFormView.swift in Sources */,
 				E42A1DAE29A19807003FB659 /* FileManager+Extension.swift in Sources */,
+				E42A1DB529A3874E003FB659 /* ShareService.swift in Sources */,
 				E4DB2373299F0FDF008E6296 /* MyImage+Extension.swift in Sources */,
 				BBF03386291046BD00D4E040 /* MyImagesGridView.swift in Sources */,
 				E4DB2371299F0EC1008E6296 /* MyImagesContainer.swift in Sources */,
@@ -319,21 +329,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Images CD/Preview Content\"";
-				DEVELOPMENT_TEAM = RKV4UP49S6;
+				DEVELOPMENT_TEAM = 4P4GQMB6S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "My-Images-CD-Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.createchsol.My-Images-CD";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mj.My-Images-CD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -349,21 +362,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"My Images CD/Preview Content\"";
-				DEVELOPMENT_TEAM = RKV4UP49S6;
+				DEVELOPMENT_TEAM = 4P4GQMB6S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "My-Images-CD-Info.plist";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.createchsol.My-Images-CD";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mj.My-Images-CD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
