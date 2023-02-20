@@ -13,10 +13,13 @@ import PhotosUI
 // Playlista: https://www.youtube.com/watch?v=og1R6HIYU5c&list=PLBn01m5Vbs4DYmnxdD1ZuEJA7yXqHcSEd&ab_channel=StewartLynch
 
 struct MyImagesGridView: View {
+    @EnvironmentObject var shareService: ShareService
+    @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)])
     private var myImages: FetchedResults<MyImage>
     @StateObject private var imagePicker = ImagePicker()
     @State private var formType: FormType?
+    @State private var imageExists = false
     let columns = [GridItem(.adaptive(minimum: 100))]
     var body: some View {
         NavigationStack {
@@ -61,13 +64,54 @@ struct MyImagesGridView: View {
                     formType = .new(newImage)
                 }
             }
+            .onChange(of: shareService.codableImage) { codableImage in
+                if let codableImage {
+                    if let myImage = myImages.first(where: { $0.id == codableImage.id }) {
+                        // This is an update of an existing image
+                        updateImageInfo(myImage: myImage)
+                        imageExists.toggle()
+                    } else {
+                        // This is a new MyImage Item
+                        restoreMyImage()
+                    }
+                }
+            }
             .sheet(item: $formType) { $0 }
+            .alert("Image Updated", isPresented: $imageExists) {
+                Button("OK") {}
+            }
         }
+    }
+    
+    func restoreMyImage() {
+        if let codableImage = shareService.codableImage {
+            let newImage = MyImage(context: moc)
+            newImage.name = codableImage.name
+            newImage.id = codableImage.id
+            newImage.comment = codableImage.comment
+            newImage.dateTaken = codableImage.dateTaken
+            newImage.receivedFrom = codableImage.receivedFrom
+            try? moc.save()
+        }
+        shareService.codableImage = nil
+    }
+    
+    func updateImageInfo(myImage: MyImage) {
+        if let codableImage = shareService.codableImage {
+            myImage.name = codableImage.name
+            myImage.id = codableImage.id
+            myImage.comment = codableImage.comment
+            myImage.dateTaken = codableImage.dateTaken
+            myImage.receivedFrom = codableImage.receivedFrom
+            try? moc.save()
+        }
+        shareService.codableImage = nil
     }
 }
 
 struct MyImagesGridView_Previews: PreviewProvider {
     static var previews: some View {
         MyImagesGridView()
+            .environmentObject(ShareService())
     }
 }

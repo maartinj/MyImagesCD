@@ -16,6 +16,7 @@
 		E42A1DAE29A19807003FB659 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */; };
 		E42A1DB529A3874E003FB659 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DB429A3874E003FB659 /* ShareService.swift */; };
 		E42A1DB829A389B6003FB659 /* icon-doc.png in Resources */ = {isa = PBXBuildFile; fileRef = E42A1DB729A389B6003FB659 /* icon-doc.png */; };
+		E4A1A9F029A3A95D00FAC7CF /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = E4A1A9EF29A3A95D00FAC7CF /* ZIPFoundation */; };
 		E4DB236F299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4DB236D299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld */; };
 		E4DB2371299F0EC1008E6296 /* MyImagesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2370299F0EC1008E6296 /* MyImagesContainer.swift */; };
 		E4DB2373299F0FDF008E6296 /* MyImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2372299F0FDF008E6296 /* MyImage+Extension.swift */; };
@@ -33,7 +34,7 @@
 		BBF03391291046E400D4E040 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E42A1DAB299FED8E003FB659 /* FormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormType.swift; sourceTree = "<group>"; };
 		E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
-		E42A1DB429A3874E003FB659 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
+		E42A1DB429A3874E003FB659 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareService.swift; path = Form/ShareService.swift; sourceTree = "<group>"; };
 		E42A1DB629A38934003FB659 /* My-Images-CD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "My-Images-CD-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E42A1DB729A389B6003FB659 /* icon-doc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-doc.png"; sourceTree = "<group>"; };
 		E4DB236E299F0E47008E6296 /* MyImagesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyImagesDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A1A9F029A3A95D00FAC7CF /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +81,7 @@
 				BBF03385291046BD00D4E040 /* MyImagesGridView.swift */,
 				E4DB2374299F127F008E6296 /* ImagePicker.swift */,
 				E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */,
+				E42A1DB429A3874E003FB659 /* ShareService.swift */,
 				E4DB2376299F16AF008E6296 /* Form */,
 				E4DB236C299F0E2F008E6296 /* CoreData */,
 				BBF03387291046BD00D4E040 /* Assets.xcassets */,
@@ -113,7 +116,6 @@
 				E4DB2377299F16CB008E6296 /* FormViewModel.swift */,
 				E4DB2379299F18D3008E6296 /* ImageFormView.swift */,
 				E42A1DAB299FED8E003FB659 /* FormType.swift */,
-				E42A1DB429A3874E003FB659 /* ShareService.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -134,6 +136,9 @@
 			dependencies = (
 			);
 			name = "My Images CD";
+			packageProductDependencies = (
+				E4A1A9EF29A3A95D00FAC7CF /* ZIPFoundation */,
+			);
 			productName = "My Images CD";
 			productReference = BBF03380291046BD00D4E040 /* My Images CD.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +167,9 @@
 				Base,
 			);
 			mainGroup = BBF03377291046BD00D4E040;
+			packageReferences = (
+				E4A1A9EE29A3A95D00FAC7CF /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+			);
 			productRefGroup = BBF03381291046BD00D4E040 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -409,6 +417,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4A1A9EE29A3A95D00FAC7CF /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4A1A9EF29A3A95D00FAC7CF /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4A1A9EE29A3A95D00FAC7CF /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E4DB236D299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld */ = {
