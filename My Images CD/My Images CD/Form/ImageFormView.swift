@@ -67,8 +67,9 @@ struct ImageFormView: View {
                             newImage.id = UUID().uuidString
                             newImage.comment = viewModel.comment
                             newImage.dateTaken = viewModel.date
+                            newImage.image = viewModel.uiImage
                             try? moc.save()
-                            FileManager().saveImage(with: newImage.imageID, image: viewModel.uiImage)
+//                            FileManager().saveImage(with: newImage.imageID, image: viewModel.uiImage)
                         }
                         dismiss()
                     } label: {
@@ -97,7 +98,7 @@ struct ImageFormView: View {
                         HStack {
                             Button {
                                 if let selectedImage = myImages.first(where: { $0.id == viewModel.id }) {
-                                    FileManager().deleteImage(with: selectedImage.imageID)
+//                                    FileManager().deleteImage(with: selectedImage.imageID)
                                     moc.delete(selectedImage)
                                     try? moc.save()
                                 }
@@ -132,7 +133,7 @@ struct ImageFormView: View {
                                                         id: id,
                                                         name: viewModel.name,
                                                         receivedFrom: viewModel.receivedFrom)
-                        shareService.saveMyImage(codableImage)
+                        shareService.saveMyImage(codableImage, uiImage: viewModel.uiImage)
                         email.messageHeader = "Send from the My Images CD app"
                         email.fileName = "\(id).\(ShareService.ext)"
                         email.mimeType = "application/zip"
@@ -174,7 +175,8 @@ struct ImageFormView: View {
             selectedImage.name = viewModel.name
             selectedImage.comment = viewModel.comment
             selectedImage.dateTaken = viewModel.date
-            FileManager().saveImage(with: id, image: viewModel.uiImage)
+            selectedImage.image = viewModel.uiImage
+//            FileManager().saveImage(with: id, image: viewModel.uiImage)
             if moc.hasChanges {
                 try? moc.save()
             }
