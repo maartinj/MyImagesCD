@@ -17,6 +17,8 @@
 		E42A1DB529A3874E003FB659 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A1DB429A3874E003FB659 /* ShareService.swift */; };
 		E42A1DB829A389B6003FB659 /* icon-doc.png in Resources */ = {isa = PBXBuildFile; fileRef = E42A1DB729A389B6003FB659 /* icon-doc.png */; };
 		E4A1A9F029A3A95D00FAC7CF /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = E4A1A9EF29A3A95D00FAC7CF /* ZIPFoundation */; };
+		E4A1A9F329A3D8BD00FAC7CF /* EmailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A1A9F229A3D8BD00FAC7CF /* EmailForm.swift */; };
+		E4A1A9F529A494D700FAC7CF /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A1A9F429A494D700FAC7CF /* MailView.swift */; };
 		E4DB236F299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4DB236D299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld */; };
 		E4DB2371299F0EC1008E6296 /* MyImagesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2370299F0EC1008E6296 /* MyImagesContainer.swift */; };
 		E4DB2373299F0FDF008E6296 /* MyImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DB2372299F0FDF008E6296 /* MyImage+Extension.swift */; };
@@ -37,6 +39,8 @@
 		E42A1DB429A3874E003FB659 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareService.swift; path = Form/ShareService.swift; sourceTree = "<group>"; };
 		E42A1DB629A38934003FB659 /* My-Images-CD-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "My-Images-CD-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E42A1DB729A389B6003FB659 /* icon-doc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-doc.png"; sourceTree = "<group>"; };
+		E4A1A9F229A3D8BD00FAC7CF /* EmailForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailForm.swift; sourceTree = "<group>"; };
+		E4A1A9F429A494D700FAC7CF /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		E4DB236E299F0E47008E6296 /* MyImagesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyImagesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E4DB2370299F0EC1008E6296 /* MyImagesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagesContainer.swift; sourceTree = "<group>"; };
 		E4DB2372299F0FDF008E6296 /* MyImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyImage+Extension.swift"; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 				E4DB2374299F127F008E6296 /* ImagePicker.swift */,
 				E42A1DAD29A19807003FB659 /* FileManager+Extension.swift */,
 				E42A1DB429A3874E003FB659 /* ShareService.swift */,
+				E4A1A9F129A3D8B200FAC7CF /* Mail */,
 				E4DB2376299F16AF008E6296 /* Form */,
 				E4DB236C299F0E2F008E6296 /* CoreData */,
 				BBF03387291046BD00D4E040 /* Assets.xcassets */,
@@ -98,6 +103,15 @@
 				BBF0338A291046BD00D4E040 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E4A1A9F129A3D8B200FAC7CF /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				E4A1A9F229A3D8BD00FAC7CF /* EmailForm.swift */,
+				E4A1A9F429A494D700FAC7CF /* MailView.swift */,
+			);
+			path = Mail;
 			sourceTree = "<group>";
 		};
 		E4DB236C299F0E2F008E6296 /* CoreData */ = {
@@ -204,10 +218,12 @@
 				E4DB2373299F0FDF008E6296 /* MyImage+Extension.swift in Sources */,
 				BBF03386291046BD00D4E040 /* MyImagesGridView.swift in Sources */,
 				E4DB2371299F0EC1008E6296 /* MyImagesContainer.swift in Sources */,
+				E4A1A9F329A3D8BD00FAC7CF /* EmailForm.swift in Sources */,
 				E42A1DAC299FED8E003FB659 /* FormType.swift in Sources */,
 				E4DB2375299F127F008E6296 /* ImagePicker.swift in Sources */,
 				E4DB2378299F16CB008E6296 /* FormViewModel.swift in Sources */,
 				E4DB236F299F0E47008E6296 /* MyImagesDataModel.xcdatamodeld in Sources */,
+				E4A1A9F529A494D700FAC7CF /* MailView.swift in Sources */,
 				BBF03384291046BD00D4E040 /* AppEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
