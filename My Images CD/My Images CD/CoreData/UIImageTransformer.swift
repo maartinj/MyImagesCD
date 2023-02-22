@@ -7,8 +7,6 @@
 
 import UIKit
 
-// Film 8:15 Part 6
-
 class UIImageTransformer: ValueTransformer {
     static let name = NSValueTransformerName(rawValue: "UIImageTransformer")
     override func transformedValue(_ value: Any?) -> Any? {

@@ -8,13 +8,15 @@
 import Foundation
 import CoreData
 
+// Brakuje CloudKit, do dodania po zakupie full Apple Dev account
+
 class MyImagesContainer {
-    let persistentContainer: NSPersistentContainer
+    let persistentCloudKitContainer: NSPersistentCloudKitContainer
     
     init() {
         UIImageTransformer.register()
-        persistentContainer = NSPersistentContainer(name: "MyImagesDataModel")
-        guard let path = persistentContainer
+        persistentCloudKitContainer = NSPersistentCloudKitContainer(name: "MyImagesDataModel")
+        guard let path = persistentCloudKitContainer
             .persistentStoreDescriptions
             .first?
             .url?
@@ -22,7 +24,13 @@ class MyImagesContainer {
             fatalError("Could not find persistent container")
         }
         print("Core Data", path)
-        persistentContainer.loadPersistentStores { _, error in
+        guard let description = persistentCloudKitContainer.persistentStoreDescriptions.first else {
+            fatalError("Failed to initialize persistent container")
+        }
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        persistentCloudKitContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        persistentCloudKitContainer.viewContext.automaticallyMergesChangesFromParent = true
+        persistentCloudKitContainer.loadPersistentStores { _, error in
             if let error {
                 print(error.localizedDescription)
             }
